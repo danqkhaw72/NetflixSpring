@@ -17,7 +17,7 @@ spring:
 aws:
   access-key: ${AWS_ACCESS_KEY:your-access-key}
   secret-key: ${AWS_SECRET_KEY:your-secret-key}
-  region: ${AWS_REGION:ap-south-1}
+  region: ${AWS_REGION:ap-south-2}
   s3:
     bucket-name: ${AWS_BUCKET_NAME:abcdbucket}
 
