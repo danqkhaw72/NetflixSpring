@@ -32,10 +32,10 @@ public class EncodingService {
     @Value("${aws.s3.bucket-name}")
     private String bucketName;
 
-    @Value("%{ffmpeg.path}")
+    @Value("${ffmpeg.path}")
     private String ffmpegPath;
 
-    @Value("%{encoding.base-path}")
+    @Value("${encoding.base-path}")
     private String basePath;
 
     private static final String VIDEO_ENCODED_TOPIC = "video.encoded";
@@ -172,6 +172,7 @@ public class EncodingService {
 
         ProcessBuilder processBuilder = new ProcessBuilder(command);
         processBuilder.redirectErrorStream(true);
+        processBuilder.inheritIO();
         Process process = processBuilder.start();
         int exitCode = process.waitFor();
         if (exitCode != 0) {

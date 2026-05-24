@@ -6,8 +6,8 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerialization
-      value-serializer: org.springframework.kafka.support.serialization.JsonSerialization
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   servlet:
     multipart:
       max-file-size: 2GB
@@ -17,9 +17,9 @@ spring:
 aws:
   access-key: ${AWS_ACCESS_KEY:your-access-key}
   secret-key: ${AWS_SECRET_KEY:your-secret-key}
-  region: ${AWS_REGION:ap-south-2}
+  region: ${AWS_REGION:ap-southeast-2}
   s3:
-    bucket-name: ${AWS_BUCKET_NAME:abcdbucket}
+    bucket-name: ${AWS_BUCKET_NAME:netflix-streaming-videos-173597791192-ap-southeast-2-an}
 
 # Actuator
 management:

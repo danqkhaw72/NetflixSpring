@@ -87,6 +87,10 @@ public class ContentService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Update movie video details after upload.
+     * Called by Video Service after successful S3 upload
+     */
     public void updateVideoKey(String movieId, String videoKey) {
         log.info("Updating video key for movie id: {}", movieId);
 
@@ -98,6 +102,10 @@ public class ContentService {
         movieRepository.save(movie);
     }
 
+    /**
+     * Update movie HLS URL after encoding is complete.
+     * Called by encoding service after FFmpeg processing.
+     */
     public void updateHlsUrl(String movieId, String hlsUrl) {
         log.info("Updating HLS url for movie id: {}", movieId);
 
@@ -109,5 +117,12 @@ public class ContentService {
 
         movieRepository.save(movie);
         log.info("Movie {} is now ready for streaming", movieId);
+    }
+
+    public void updateVideoStatus(String movieId, VideoStatus videoStatus) {
+        Movie movie =  movieRepository.findById(movieId)
+                .orElseThrow(() -> new RuntimeException("Movie not found: " + movieId));
+        movie.setVideoStatus(videoStatus);
+        movieRepository.save(movie);
     }
 }

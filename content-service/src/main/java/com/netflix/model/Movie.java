@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @Table(name = "movie")
 @Data
 @NoArgsConstructor
-@AllArgsConstructors
+@AllArgsConstructor
 public class Movie {
 
     @Id

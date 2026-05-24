@@ -30,7 +30,7 @@ public class VideoController {
     @PostMapping("/upload/{movieId}")
     public ResponseEntity<String> uploadVideo(
             @PathVariable String movieId,
-            @RequestParam("file")MultipartFile file) throws IOException {
+            @RequestParam("file") MultipartFile file) throws IOException {
         log.info("Video upload request for movie: {} file size: {}MB",
                 movieId, file.getSize() / (1024 * 1024));
 

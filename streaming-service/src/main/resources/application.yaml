@@ -31,9 +31,9 @@ spring:
 aws:
   access-key: ${AWS_ACCESS_KEY:your-access-key}
   secret-key: ${AWS_SECRET_KEY:your-secret-key}
-  region: ${AWS_REGION:ap-south-2}
+  region: ${AWS_REGION:ap-southeast-2}
   s3:
-    bucket-name: ${AWS_BUCKET_NAME:abcdbucket}
+    bucket-name: ${AWS_BUCKET_NAME:netflix-streaming-videos-173597791192-ap-southeast-2-an}
     # Presigned URL expiry in minutes
     presigned-url-expiry: 60
 
