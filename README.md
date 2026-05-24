@@ -57,7 +57,7 @@ POST http://localhost:8081/api/v1/movies
 ```
 POST http://localhost:8082/api/v1/videos/upload/{movieId}
 ```
-![upload_video](./temp/upload_video.png)
+![upload_video](upload_video.png)
 
 ### Step 3: Check Movie Status
 ```
