@@ -82,7 +82,7 @@ public class EncodingService {
                 int bitrate = qualities[1];
                 int height = qualities[2];
 
-                String qualityDir = jobPath + "/encoded" + height + "p";
+                String qualityDir = jobPath + "/encoded/" + height + "p";
                 Files.createDirectories(Paths.get(qualityDir));
 
                 encodeToHLS(localVideoPath, qualityDir, width, height, bitrate);
@@ -164,7 +164,7 @@ public class EncodingService {
                 "-c:a", "aac",                              // Audio codec
                 "-b:a", "128k",                             // Audio bitrate
                 "-hls_time", "10",                          // 10 second segment
-                "-hls-list_size", "0",                      // Keep all segment
+                "-hls_list_size", "0",                      // Keep all segment
                 "-hls_segment_filename", segmentPattern,    // segment naming
                 "-f", "hls",                                // output format HLS
                 playlistPath                                // output playlist
